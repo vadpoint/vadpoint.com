@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="/scripts/pretty-feed-v3.xsl" type="text/xsl"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:h="http://www.w3.org/TR/html4/"><channel><title>VADPoint</title><description>VADPoint.com - Vadym Dzina home for experiments, notes, ideas.</description><link>https://vadpoint.com</link><item><title>Github CheatSheet</title><link>https://vadpoint.com/blog/github-cheat-sheet</link><guid isPermaLink="true">https://vadpoint.com/blog/github-cheat-sheet</guid><description>Шпаргалка по роботі з Git та GitHub CLI (gh) для автоматизації SDD.</description><pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🛠️ Git &amp;#x26; GitHub CLI Cheatsheet&lt;/h2&gt;
+&lt;h3&gt;Quick access&lt;/h3&gt;
+&lt;h3&gt;Fast PR for quick sync (REMOVING BRANCH after merge)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;gh pr create --fill --base main &amp;#x26;&amp;#x26; gh pr merge --squash --delete-branch
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;| Дія                           | Git (Локально)                        | GitHub CLI (&lt;code&gt;gh&lt;/code&gt;)                             |
+| :---------------------------- | :------------------------------------ | :-------------------------------------------- |
+| &lt;strong&gt;1. Знайти та додати зміни&lt;/strong&gt; | &lt;code&gt;git status &amp;#x26;&amp;#x26; git add .&lt;/code&gt;             | —                                             |
+| &lt;strong&gt;2. Комміт та Пуш&lt;/strong&gt;          | &lt;code&gt;git commit -m &quot;message&quot; &amp;#x26;&amp;#x26; git push&lt;/code&gt; | —                                             |
+| &lt;strong&gt;3. Переключити гілку&lt;/strong&gt;      | &lt;code&gt;git checkout -&lt;/code&gt; &lt;em&gt;(на попередню)&lt;/em&gt;     | &lt;code&gt;gh pr checkout &amp;#x3C;номер&gt;&lt;/code&gt;                      |
+| &lt;strong&gt;4. Створити та злити PR&lt;/strong&gt;   | &lt;em&gt;(Через Web UI)&lt;/em&gt;                      | &lt;code&gt;gh pr create --fill &amp;#x26;&amp;#x26; gh pr merge --squash&lt;/code&gt; |&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;🚀 One-Liner Commands (Manual)&lt;/h3&gt;
+&lt;h4&gt;Варіант А: Чистий Git (Стандарт)&lt;/h4&gt;
+&lt;p&gt;Найкраще підходить для локальної розробки, але потребує браузера для завершення PR.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;git add .&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Commit &amp;#x26; Push&lt;/strong&gt;: &lt;code&gt;git commit -m &quot;Your comment&quot; &amp;#x26;&amp;#x26; git push&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Branch names &amp;#x26; Switch&lt;/strong&gt;: &lt;code&gt;git branch --sort=-committerdate&lt;/code&gt; &lt;em&gt;(список)&lt;/em&gt; → &lt;code&gt;git checkout &amp;#x3C;name&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PR &amp;#x26; Merge&lt;/strong&gt;: &lt;code&gt;git request-pull&lt;/code&gt; &lt;em&gt;(складно)&lt;/em&gt; → &lt;strong&gt;Краще відкрити GitHub у браузері&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Варіант Б: GitHub CLI (&lt;code&gt;gh&lt;/code&gt;) (Професійно)&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Це найкращий вибір&lt;/strong&gt;, оскільки він дозволяє завершити весь цикл (включаючи PR та Merge), не прибираючи рук з клавіатури.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Stage&lt;/strong&gt;: &lt;code&gt;git add .&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Commit &amp;#x26; Push&lt;/strong&gt;: &lt;code&gt;git commit -m &quot;Your comment&quot; &amp;#x26;&amp;#x26; git push&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Switch to recent&lt;/strong&gt;: &lt;code&gt;git checkout $(git branch --sort=-committerdate --format=&quot;%(refname:short)&quot; | head -n 2 | tail -n 1)&lt;/code&gt; &lt;em&gt;(авто-перехід на останню використану)&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PR &amp;#x26; Merge&lt;/strong&gt;: &lt;code&gt;gh pr create --fill --base main &amp;#x26;&amp;#x26; gh pr merge --squash --delete-branch&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!note] &lt;strong&gt;TIP:&lt;/strong&gt; Використовуйте &lt;code&gt;git&lt;/code&gt; для коммітів, а &lt;code&gt;gh&lt;/code&gt; для всього, що стосується взаємодії з репозиторієм на сервері.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;</content:encoded></item><item><title>Tips to improve concentration</title><link>https://vadpoint.com/blog/improve-concentration</link><guid isPermaLink="true">https://vadpoint.com/blog/improve-concentration</guid><description>Mindfulness, cognitive training, and a healthy lifestyle may help sharpen your focus.</description><pubDate>Sat, 10 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import { Aside } from &apos;astro-pure/user&apos;&lt;/p&gt;
+&lt;p&gt;You&apos;re trying to concentrate, but your mind is wandering or you&apos;re easily distracted. What happened to the laser-sharp focus you once enjoyed? As we age, we tend to have more difficulty filtering out stimuli that are not relevant to the task at hand.&lt;/p&gt;
+&lt;h2&gt;What&apos;s fogging up focus?&lt;/h2&gt;
+&lt;p&gt;Like a computer that slows with use, the brain accumulates wear and tear that affects processing. This can be caused by a number of physiological stressors such as inflammation, injury to blood vessels (especially if you have high blood pressure), the buildup of abnormal proteins, and naturally occurring brain shrinkage.&lt;/p&gt;
+&lt;p&gt;The following factors can also affect your concentration.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Underlying conditions.&lt;/strong&gt; Depression or sleep disorders (such as sleep apnea) can undermine your ability to concentrate. So can the effects of vision or hearing loss. You waste precious cognitive resources when you spend too much time trying to make out what&apos;s written on a page or just hear what someone is saying.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Medication side effects.&lt;/strong&gt; Some drugs, especially anticholinergics (such as treatments for incontinence, depression, or allergies), can slow processing speed and your ability to think clearly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Excessive drinking.&lt;/strong&gt; Having too much alcohol impairs thinking and causes interrupted sleep, which affects concentration.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Information overload.&lt;/strong&gt; We are bombarded with information from TVs, computers, and messages such as texts or emails. When there&apos;s too much material, it burdens our filtering system and it&apos;s easy to get distracted.&lt;/p&gt;
+&lt;h2&gt;Strategies to stay focused&lt;/h2&gt;
+&lt;p&gt;To improve attention, consider the following strategies.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mindfulness.&lt;/strong&gt; &quot;Mindfulness is about focusing attention on the present moment, and practicing mindfulness has been shown to rewire the brain so that attention is stronger in everyday life,&quot; says Kim Willment, a neuropsychologist with Brigham and Women&apos;s Hospital. She recommends sitting still for a few minutes each day, closing your eyes, and focusing on your breathing as well as the sounds and sensations around you.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cognitive training.&lt;/strong&gt; Computerized cognitive training games aim to improve your response times and attention. Evidence that this works has been mixed. &quot;The goal of playing these games is not to get better at them, but to get better in the cognitive activities of everyday life,&quot; Willment says. &quot;But there is evidence that a person&apos;s ability to pay attention can be improved by progressively pushing the person to higher levels of performance. So if you reach a certain level of sustained attention, pushing it to the next level can help improve it, and this may translate to everyday life.&quot;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A healthier lifestyle.&lt;/strong&gt; Many aspects of a healthy lifestyle can help attention, starting with sleep and exercise. There is a direct link between exercise and cognitive ability, especially attention. When you exercise, you increase the availability of brain chemicals that promote new brain connections, reduce stress, and improve sleep. And when we sleep, we reduce stress hormones that can be harmful to the brain, and we clear out proteins that injure it.&lt;/p&gt;
+&lt;p&gt;Aim for seven to eight hours of sleep each night, and 150 minutes per week of aerobic exercise, such as brisk walking.&lt;/p&gt;
+&lt;p&gt;Other healthy steps to improve focus: eat a Mediterranean-style diet, which has been shown to support brain health; treat underlying conditions; and change medications that may be affecting your ability to focus.&lt;/p&gt;
+&lt;p&gt;Getting older is out of your control, but healthier living is something you determine, and it may improve concentration.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Article from: &lt;a href=&quot;https://www.health.harvard.edu/mind-and-mood/tips-to-improve-concentration&quot;&gt;Harvard Health Publishing&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><h:img src="/_astro/thumbnail.1GZ294Dz.jpg"/><enclosure url="/_astro/thumbnail.1GZ294Dz.jpg"/></item></channel></rss>
